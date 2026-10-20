@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>جدول التمارين للأجهزة | Warm-up & Push Pull Legs</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Tajawal & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'Inter', 'sans-serif'],
+                        en: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        mocha: {
+                            50: '#F9F6F4',
+                            100: '#F0EAE6',
+                            200: '#E2D6CE',
+                            300: '#CBB8AC',
+                            400: '#A98F80',
+                            500: '#8C7365',
+                            600: '#6D564B',
+                            700: '#56433A',
+                            800: '#42332C',
+                            900: '#2E231E',
+                        },
+                        sage: {
+                            50: '#F4F7F7',
+                            100: '#E4ECEC',
+                            200: '#CBDADA',
+                            300: '#A7C1C1',
+                            400: '#7FA3A3',
+                            500: '#628787',
+                            600: '#4D6D6D',
+                            700: '#3E5757',
+                            800: '#334646',
+                            900: '#293838',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            background-color: #F4F6F6;
+            color: #42332C;
+            font-family: 'Tajawal', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Floating Hearts & Sparkles Animation for Menna Welcome Modal */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(4deg); }
+        }
+        @keyframes pulseSoft {
+            0%, 100% { transform: scale(1); opacity: 0.85; }
+            50% { transform: scale(1.08); opacity: 1; }
+        }
+        @keyframes confettiFall {
+            0% { transform: translateY(-10px) rotate(0deg) scale(0.9); opacity: 1; }
+            100% { transform: translateY(105vh) rotate(360deg) scale(1.1); opacity: 0; }
+        }
+        .anim-float-slow { animation: floatSlow 3.4s ease-in-out infinite; }
+        .anim-pulse-soft { animation: pulseSoft 2.5s ease-in-out infinite; }
+        .confetti-piece {
+            position: fixed;
+            top: -20px;
+            z-index: 9999;
+            pointer-events: none;
+            animation: confettiFall 2.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        /* Custom subtle scrollbars */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F0EAE6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBB8AC;
+            border-radius: 9999px;
+        }
+
+        /* Smooth Female Exercise SVG Animations */
+        @keyframes stickRaise {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-18px); }
+        }
+        @keyframes torsoTwist {
+            0%, 100% { transform: translateX(-4px) scaleX(0.96); }
+            50% { transform: translateX(4px) scaleX(1.04); }
+        }
+        @keyframes armCircle {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(16deg); }
+            100% { transform: rotate(0deg); }
+        }
+        @keyframes walkLegs {
+            0%, 100% { transform: rotate(-12deg); }
+            50% { transform: rotate(12deg); }
+        }
+        @keyframes walkLegsAlt {
+            0%, 100% { transform: rotate(12deg); }
+            50% { transform: rotate(-12deg); }
+        }
+        @keyframes pushForward {
+            0%, 100% { transform: translateX(0px); }
+            50% { transform: translateX(13px); }
+        }
+        @keyframes pullBackward {
+            0%, 100% { transform: translateX(10px); }
+            50% { transform: translateX(-5px); }
+        }
+        @keyframes pressUp {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes pullDown {
+            0%, 100% { transform: translateY(-12px); }
+            50% { transform: translateY(6px); }
+        }
+        @keyframes flyInward {
+            0%, 100% { transform: scaleX(1); }
+            50% { transform: scaleX(0.68); }
+        }
+        @keyframes abductOut {
+            0%, 100% { transform: scaleX(0.82); }
+            50% { transform: scaleX(1.16); }
+        }
+        @keyframes legExtend {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-32deg); }
+        }
+        @keyframes legCurlDown {
+            0%, 100% { transform: rotate(-25deg); }
+            50% { transform: rotate(15deg); }
+        }
+        @keyframes gluteKick {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(28deg); }
+        }
+        @keyframes legPressPush {
+            0%, 100% { transform: translate(0px, 0px); }
+            50% { transform: translate(12px, -6px); }
+        }
+
+        .anim-stick-up { animation: stickRaise 2.4s ease-in-out infinite; }
+        .anim-twist { animation: torsoTwist 2.2s ease-in-out infinite; transform-origin: center; }
+        .anim-walk-1 { animation: walkLegs 1.2s ease-in-out infinite; transform-origin: 60px 64px; }
+        .anim-walk-2 { animation: walkLegsAlt 1.2s ease-in-out infinite; transform-origin: 60px 64px; }
+        .anim-push-x { animation: pushForward 2.2s ease-in-out infinite; }
+        .anim-pull-x { animation: pullBackward 2.2s ease-in-out infinite; }
+        .anim-press-y { animation: pressUp 2.2s ease-in-out infinite; }
+        .anim-pull-y { animation: pullDown 2.2s ease-in-out infinite; }
+        .anim-fly { animation: flyInward 2.3s ease-in-out infinite; transform-origin: 60px 55px; }
+        .anim-abduct { animation: abductOut 2.2s ease-in-out infinite; transform-origin: 60px 62px; }
+        .anim-leg-ext { animation: legExtend 2.2s ease-in-out infinite; transform-origin: 68px 66px; }
+        .anim-leg-curl { animation: legCurlDown 2.2s ease-in-out infinite; transform-origin: 68px 66px; }
+        .anim-kickback { animation: gluteKick 2.1s ease-in-out infinite; transform-origin: 58px 60px; }
+        .anim-leg-press { animation: legPressPush 2.3s ease-in-out infinite; }
+
+        .rect-card {
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        }
+        .rect-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px -8px rgba(109, 86, 75, 0.14);
+        }
+        .rect-card:active {
+            transform: scale(0.99);
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-24 selection:bg-sage-200 selection:text-mocha-900">
+
+    <!-- Confetti & Hearts Burst Container -->
+    <div id="confettiContainer" class="fixed inset-0 pointer-events-none z-[70] overflow-hidden"></div>
+
+    <!-- Minimal Calm Sticky Header Personalized for Menna -->
+    <header class="sticky top-0 z-30 bg-[#F4F6F6]/90 backdrop-blur-md border-b border-mocha-200/70 px-4 py-3.5">
+        <div class="max-w-2xl mx-auto flex items-center justify-between gap-2">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-mocha-600 to-sage-600 text-white flex items-center justify-center shadow-sm shrink-0">
+                    <i class="fa-solid fa-heart text-sm"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                        <h1 class="text-base sm:text-lg font-extrabold text-mocha-800 leading-tight">جدول تمارين منة 🤎</h1>
+                        <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-mocha-100 text-mocha-700 border border-mocha-200">
+                            مخصوص لـ منة ✨
+                        </span>
+                    </div>
+                    <p class="text-xs text-mocha-500 font-medium mt-0.5">أجهزة فقط + تسخين • اضغطي على أي مستطيل للتفاصيل</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-1.5">
+                <!-- Reopen Menna's Welcome Note Anytime -->
+                <button onclick="openMennaWelcomeModal()" class="px-2.5 py-2 rounded-xl bg-mocha-600 hover:bg-mocha-700 text-white text-xs font-extrabold flex items-center gap-1.5 shadow-sm transition" title="رسالة خاصة لمنة">
+                    <span>💌</span>
+                    <span class="hidden xs:inline sm:inline">رسالة ليكي</span>
+                </button>
+
+                <!-- Quick Rest Timer Trigger -->
+                <button onclick="startRestTimer(60)" class="px-2.5 py-2 rounded-xl bg-sage-100 hover:bg-sage-200 text-sage-800 border border-sage-200 text-xs font-bold flex items-center gap-1.5 transition" title="مؤقت الراحة 60 ثانية">
+                    <i class="fa-regular fa-clock text-sage-600"></i>
+                    <span class="hidden sm:inline">راحة 60ث</span>
+                </button>
+
+                <!-- Coach Customization / Share Button -->
+                <button onclick="openCoachModal()" class="w-9 h-9 rounded-xl bg-mocha-100 hover:bg-mocha-200 text-mocha-700 border border-mocha-200 flex items-center justify-center transition" title="إعدادات الكابتن ومشاركة الرابط">
+                    <i class="fa-solid fa-sliders text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-2xl mx-auto px-4 pt-4 space-y-4">
+
+        <!-- 4 Smooth Pill Tabs: Warm-up | Push | Pull | Legs -->
+        <nav aria-label="أقسام التمرين" class="bg-mocha-100/80 p-1.5 rounded-2xl border border-mocha-200/80 grid grid-cols-4 gap-1.5">
+            <button id="tab-warmup" onclick="selectTab('warmup')" class="py-2.5 px-2 rounded-xl text-center transition-all duration-200 bg-mocha-600 text-white shadow-sm">
+                <div class="text-xs sm:text-sm font-extrabold">التسخين</div>
+                <div class="text-[10px] font-en opacity-85">Warm-up</div>
+            </button>
+
+            <button id="tab-push" onclick="selectTab('push')" class="py-2.5 px-2 rounded-xl text-center transition-all duration-200 text-mocha-700 hover:bg-white/60">
+                <div class="text-xs sm:text-sm font-extrabold">يوم الدفع</div>
+                <div class="text-[10px] font-en opacity-75">Push</div>
+            </button>
+
+            <button id="tab-pull" onclick="selectTab('pull')" class="py-2.5 px-2 rounded-xl text-center transition-all duration-200 text-mocha-700 hover:bg-white/60">
+                <div class="text-xs sm:text-sm font-extrabold">يوم السحب</div>
+                <div class="text-[10px] font-en opacity-75">Pull</div>
+            </button>
+
+            <button id="tab-legs" onclick="selectTab('legs')" class="py-2.5 px-2 rounded-xl text-center transition-all duration-200 text-mocha-700 hover:bg-white/60">
+                <div class="text-xs sm:text-sm font-extrabold">يوم الرجل</div>
+                <div class="text-[10px] font-en opacity-75">Legs</div>
+            </button>
+        </nav>
+
+        <!-- Subtle Day Summary Bar -->
+        <div class="bg-white/90 border border-mocha-200/70 rounded-2xl px-4 py-3 flex items-center justify-between gap-2 shadow-sm">
+            <div>
+                <h2 id="sectionHeading" class="text-sm sm:text-base font-extrabold text-mocha-800">تمارين التسخين والمرونة بالعصاية</h2>
+                <p id="sectionSubtext" class="text-xs text-mocha-500 mt-0.5">ابدئي بها قبل أي تمرين لتهيئة المفاصل والأكتاف بأمان</p>
+            </div>
+            <div class="bg-sage-50 border border-sage-200 px-3 py-1.5 rounded-xl text-center shrink-0">
+                <span id="sectionProgressText" class="text-xs font-extrabold text-sage-700">0 / 4</span>
+                <span class="block text-[10px] text-sage-600">مكتمل اليوم</span>
+            </div>
+        </div>
+
+        <!-- Rectangular Exercise Cards Stack (مستطيلات التمارين) -->
+        <section id="exerciseListContainer" class="space-y-3" aria-label="قائمة التمارين">
+            <!-- Populated via JS -->
+        </section>
+
+    </main>
+
+    <!-- Floating Calm Rest Timer Bar -->
+    <div id="restTimerBar" class="fixed bottom-4 left-4 right-4 max-w-md mx-auto z-40 hidden">
+        <div class="bg-mocha-800 text-white rounded-2xl p-3.5 shadow-xl border border-mocha-600 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+                <div id="restTimerCount" class="w-11 h-11 rounded-xl bg-sage-500 text-white font-en font-bold text-sm flex items-center justify-center shrink-0">
+                    01:00
+                </div>
+                <div>
+                    <div class="text-xs font-extrabold text-mocha-50">وقت الراحة بين الجولات</div>
+                    <div class="text-[11px] text-mocha-200">خذي نفساً عميقاً واشربي القليل من الماء 💧</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-1.5">
+                <button onclick="addTimerSeconds(15)" class="px-2.5 py-1.5 rounded-lg bg-mocha-700 hover:bg-mocha-600 text-xs font-bold text-mocha-100 transition">
+                    +15ث
+                </button>
+                <button onclick="stopRestTimer()" class="px-2.5 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-xs font-bold text-white transition">
+                    إغلاق
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- EXERCISE DETAIL MODAL (Opens when clicking a rectangle) -->
+    <!-- ===================================================== -->
+    <div id="detailModal" class="fixed inset-0 z-50 hidden flex items-end sm:items-center justify-center bg-mocha-900/50 backdrop-blur-sm p-0 sm:p-4">
+        <div class="bg-[#FAF8F6] border-t sm:border border-mocha-200 rounded-t-3xl sm:rounded-3xl w-full max-w-lg max-h-[92vh] flex flex-col overflow-hidden shadow-2xl animate-fadeIn">
+
+            <!-- Modal Top Header -->
+            <div class="bg-white px-5 py-4 border-b border-mocha-200/80 flex items-start justify-between gap-3 shrink-0">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span id="modalMusclePill" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-sage-100 text-sage-800 border border-sage-200">
+                            العضلة المستهدفة
+                        </span>
+                        <span id="modalMachineBadge" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-mocha-100 text-mocha-700">
+                            جهاز آمن
+                        </span>
+                    </div>
+                    <h3 id="modalTitleAr" class="text-lg font-black text-mocha-900 mt-1">اسم التمرين</h3>
+                    <p id="modalTitleEn" class="text-xs font-en font-semibold text-mocha-500" dir="ltr">Exercise Name</p>
+                </div>
+
+                <button onclick="closeDetailModal()" class="w-9 h-9 rounded-full bg-mocha-100 hover:bg-mocha-200 text-mocha-700 flex items-center justify-center transition shrink-0">
+                    <i class="fa-solid fa-xmark text-base"></i>
+                </button>
+            </div>
+
+            <!-- Scrollable Modal Body -->
+            <div class="p-4 sm:p-5 overflow-y-auto space-y-4">
+
+                <!-- Large Female Exercise Illustration + Quick Specs -->
+                <div class="bg-white border border-mocha-200/80 rounded-2xl p-4 flex flex-col items-center">
+                    <div id="modalLargeIllustration" class="w-48 h-40 flex items-center justify-center">
+                        <!-- Animated Female SVG injected here -->
+                    </div>
+
+                    <!-- Sets, Reps & Rest Pills -->
+                    <div class="grid grid-cols-2 gap-2.5 w-full mt-3 pt-3 border-t border-mocha-100">
+                        <div class="bg-mocha-50 rounded-xl px-3 py-2 text-center border border-mocha-200/60">
+                            <span class="block text-[10px] text-mocha-500 font-bold">الجولات والعدات المطلوبة</span>
+                            <span id="modalSetsReps" class="text-xs sm:text-sm font-extrabold text-mocha-800">3 جولات × 12 عدة</span>
+                        </div>
+                        <div class="bg-sage-50 rounded-xl px-3 py-2 text-center border border-sage-200/70">
+                            <span class="block text-[10px] text-sage-600 font-bold">الراحة بين الجولات</span>
+                            <span id="modalRestTime" class="text-xs sm:text-sm font-extrabold text-sage-800">60 ثانية</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Demonstration Section -->
+                <div class="bg-white border border-mocha-200/80 rounded-2xl p-4 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-extrabold text-mocha-800 flex items-center gap-1.5">
+                            <i class="fa-solid fa-circle-play text-sage-600 text-sm"></i>
+                            فيديو توضيحي لأداء التمرين:
+                        </span>
+                        <button onclick="toggleCustomVideoInput()" class="text-[11px] text-sage-700 hover:underline font-bold">
+                            + إضافة رابط فيديو خاص
+                        </button>
+                    </div>
+
+                    <!-- Embedded Video Container (if custom YouTube link exists) -->
+                    <div id="modalEmbeddedVideoBox" class="hidden rounded-xl overflow-hidden border border-mocha-200 bg-black aspect-video"></div>
+
+                    <!-- Direct Video Buttons (YouTube Shorts & TikTok Female Form) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <a id="modalYoutubeBtn" href="#" target="_blank" rel="noopener noreferrer"
+                            class="py-2.5 px-3 rounded-xl bg-mocha-700 hover:bg-mocha-800 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition">
+                            <i class="fa-brands fa-youtube text-base text-rose-300"></i>
+                            <span>مشاهدة فيديو التمرين (YouTube)</span>
+                        </a>
+                        <a id="modalTiktokBtn" href="#" target="_blank" rel="noopener noreferrer"
+                            class="py-2.5 px-3 rounded-xl bg-sage-100 hover:bg-sage-200 text-sage-900 border border-sage-300 font-bold text-xs flex items-center justify-center gap-2 transition">
+                            <i class="fa-brands fa-tiktok text-sm"></i>
+                            <span>فيديو سريع (TikTok Form)</span>
+                        </a>
+                    </div>
+
+                    <!-- Collapsible Custom Video URL Input -->
+                    <div id="customVideoInputRow" class="hidden pt-2 border-t border-mocha-100">
+                        <label class="block text-[11px] font-bold text-mocha-600 mb-1">الصقي رابط يوتيوب أو صورة GIF لهذا التمرين:</label>
+                        <div class="flex gap-2">
+                            <input id="customVideoUrlField" type="url" dir="ltr" placeholder="https://www.youtube.com/watch?v=..."
+                                class="flex-1 bg-mocha-50 border border-mocha-200 rounded-xl px-3 py-1.5 text-xs font-en outline-none focus:border-sage-500">
+                            <button onclick="saveExerciseVideoUrl()" class="px-3.5 py-1.5 rounded-xl bg-sage-600 hover:bg-sage-700 text-white text-xs font-bold shrink-0">
+                                حفظ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step-by-Step Instructions in Feminine Arabic -->
+                <div class="bg-white border border-mocha-200/80 rounded-2xl p-4 space-y-2.5">
+                    <h4 class="text-xs font-extrabold text-mocha-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-list-check text-mocha-600"></i>
+                        <span>خطوات الأداء الصحيح على الجهاز:</span>
+                    </h4>
+                    <ul id="modalStepsList" class="space-y-2 text-xs text-mocha-700 leading-relaxed list-disc list-inside">
+                        <!-- Steps injected via JS -->
+                    </ul>
+                    <div class="mt-2 bg-sage-50 border border-sage-200/80 rounded-xl p-3 flex items-start gap-2">
+                        <i class="fa-solid fa-heart text-sage-600 mt-0.5 text-xs"></i>
+                        <p class="text-xs text-sage-900 leading-relaxed">
+                            <strong class="font-extrabold">نصيحة لكِ: </strong>
+                            <span id="modalTipText"></span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Weight & Reps Logger Section (خانة تسجيل الوزن) -->
+                <div class="bg-mocha-100/70 border border-mocha-200 rounded-2xl p-4 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-xs font-extrabold text-mocha-900 flex items-center gap-1.5">
+                            <i class="fa-solid fa-pen-to-square text-mocha-700"></i>
+                            <span>سجلي وزنكِ في هذا التمرين:</span>
+                        </h4>
+                        <span id="modalLastWeightBadge" class="text-xs font-extrabold text-sage-800 bg-sage-100 border border-sage-200 px-2.5 py-0.5 rounded-full">
+                            لم يسجل بعد
+                        </span>
+                    </div>
+
+                    <form onsubmit="handleSaveWeightLog(event)" class="grid grid-cols-12 gap-2 items-center">
+                        <div class="col-span-4">
+                            <label class="block text-[10px] font-bold text-mocha-600 mb-1">الوزن (كجم)</label>
+                            <input id="modalWeightInput" type="number" step="0.5" min="0" required placeholder="مثلاً 10"
+                                class="w-full bg-white border border-mocha-300 focus:border-sage-600 rounded-xl px-3 py-2 text-sm font-en font-bold text-mocha-900 text-center outline-none">
+                        </div>
+                        <div class="col-span-3">
+                            <label class="block text-[10px] font-bold text-mocha-600 mb-1">العدات</label>
+                            <input id="modalRepsInput" type="number" step="1" min="1" required value="12"
+                                class="w-full bg-white border border-mocha-300 focus:border-sage-600 rounded-xl px-2 py-2 text-sm font-en font-bold text-mocha-900 text-center outline-none">
+                        </div>
+                        <div class="col-span-5 pt-4">
+                            <button type="submit" class="w-full py-2.5 px-3 rounded-xl bg-sage-600 hover:bg-sage-700 text-white font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-sm transition">
+                                <i class="fa-solid fa-check"></i>
+                                <span>حفظ الوزن يا منة</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Previous Weight Logs History -->
+                    <div id="modalLogsHistoryWrapper" class="hidden pt-2 border-t border-mocha-200/70 space-y-1.5">
+                        <div class="text-[11px] font-bold text-mocha-600">سجل أوزانكِ السابقة:</div>
+                        <div id="modalLogsHistoryList" class="space-y-1.5 max-h-32 overflow-y-auto"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-white px-5 py-3 border-t border-mocha-200/80 flex items-center justify-between gap-3 shrink-0">
+                <button id="modalCompleteToggleBtn" onclick="toggleCurrentExerciseDone()"
+                    class="flex-1 py-2.5 px-4 rounded-xl border border-mocha-300 text-mocha-800 font-extrabold text-xs flex items-center justify-center gap-2 transition">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <span>تعليم التمرين كمكتمل اليوم</span>
+                </button>
+                <button onclick="closeDetailModal()" class="py-2.5 px-5 rounded-xl bg-mocha-100 hover:bg-mocha-200 text-mocha-800 font-bold text-xs transition">
+                    إغلاق
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- PERSONALIZED WELCOME OVERLAY MODAL FOR "منة" (MENNA)  -->
+    <!-- ===================================================== -->
+    <div id="mennaWelcomeModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-mocha-900/60 backdrop-blur-md p-4">
+        <div class="relative bg-[#FAF7F4] border border-mocha-200 rounded-3xl w-full max-w-md overflow-hidden shadow-2xl transition-all duration-300">
+
+            <!-- Decorative Top Banner with Subtle Animated SVG Hearts & Sparkles -->
+            <div class="relative bg-gradient-to-br from-mocha-700 via-mocha-600 to-sage-600 px-6 pt-6 pb-5 text-white text-center overflow-hidden">
+                <!-- Background Floating Decorative Shapes -->
+                <svg class="w-full h-full absolute inset-0 opacity-20 pointer-events-none" viewBox="0 0 200 90">
+                    <circle cx="25" cy="25" r="16" fill="#FFFFFF" class="anim-float-slow"/>
+                    <circle cx="175" cy="65" r="22" fill="#FFFFFF" class="anim-float-slow"/>
+                    <path d="M160 18 Q165 10 170 18 T180 18 Q185 26 170 36 Q155 26 160 18 Z" fill="#FFFFFF" class="anim-pulse-soft"/>
+                </svg>
+
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center text-2xl shadow-inner mb-2.5 anim-float-slow">
+                        🤎
+                    </div>
+                    <span class="text-[11px] font-bold tracking-wide px-3 py-0.5 rounded-full bg-white/20 text-mocha-50 mb-1.5">
+                        مساحة خاصة بـ منة ✨
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-black text-white leading-snug">
+                        نورتي الجيم يا منة 🤎✨
+                    </h2>
+                    <p class="text-xs text-mocha-100 mt-1 font-medium">
+                        البرنامج ده متصمم مخصوص عشانك خطوة بخطوة
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="p-5 space-y-4 max-h-[75vh] overflow-y-auto">
+
+                <!-- 1. Interactive Mood Picker -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-extrabold text-mocha-800 text-center">
+                        حاسة بإيه النهاردة قبل التمرين يا منة؟ 🌸
+                    </label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button type="button" id="mood-btn-excited" onclick="selectMennaMood('excited')"
+                            class="mood-pill py-2.5 px-2 rounded-2xl border border-mocha-200 bg-white hover:bg-mocha-50 text-mocha-800 text-center transition flex flex-col items-center gap-1 shadow-sm">
+                            <span class="text-base">💪</span>
+                            <span class="text-[11px] font-extrabold leading-tight">متحمسة وجاهزة</span>
+                        </button>
+
+                        <button type="button" id="mood-btn-shy" onclick="selectMennaMood('shy')"
+                            class="mood-pill py-2.5 px-2 rounded-2xl border border-mocha-200 bg-white hover:bg-mocha-50 text-mocha-800 text-center transition flex flex-col items-center gap-1 shadow-sm">
+                            <span class="text-base">🌸</span>
+                            <span class="text-[11px] font-extrabold leading-tight">أول يوم ومكسوفة شوية</span>
+                        </button>
+
+                        <button type="button" id="mood-btn-calm" onclick="selectMennaMood('calm')"
+                            class="mood-pill py-2.5 px-2 rounded-2xl border border-mocha-200 bg-white hover:bg-mocha-50 text-mocha-800 text-center transition flex flex-col items-center gap-1 shadow-sm">
+                            <span class="text-base">☕</span>
+                            <span class="text-[11px] font-extrabold leading-tight">طاقة هادية النهاردة</span>
+                        </button>
+                    </div>
+
+                    <!-- Dynamic Response Box Based on Mood -->
+                    <div id="mennaMoodResponseBox" class="bg-sage-50 border border-sage-200/90 rounded-2xl p-3 text-xs font-bold text-sage-900 leading-relaxed text-center transition-all duration-200">
+                        اختاري حالتك النهاردة يا منة عشان تشوفي رسالتك ✨
+                    </div>
+                </div>
+
+                <!-- 2. Secret Note of the Day Card -->
+                <div class="bg-white border border-mocha-200/90 rounded-2xl p-4 shadow-sm space-y-2.5 relative">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-extrabold text-mocha-700 flex items-center gap-1.5">
+                            <span>💌</span>
+                            <span>رسالة اليوم لمنة:</span>
+                        </span>
+                        <button type="button" onclick="nextMennaNote()"
+                            class="text-[11px] font-extrabold px-2.5 py-1 rounded-xl bg-mocha-100 hover:bg-mocha-200 text-mocha-800 transition flex items-center gap-1">
+                            <i class="fa-solid fa-wand-magic-sparkles text-[10px] text-mocha-600"></i>
+                            <span>رسالة كمان ✨</span>
+                        </button>
+                    </div>
+
+                    <p id="mennaSecretNoteText" class="text-xs sm:text-sm font-bold text-mocha-900 leading-relaxed bg-mocha-50/70 rounded-xl p-3 border border-mocha-100">
+                        <!-- Note injected via JS -->
+                    </p>
+                </div>
+
+                <!-- 3. Start Workout CTA Button -->
+                <button type="button" onclick="startMennaWorkout()"
+                    class="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-mocha-700 to-sage-600 hover:from-mocha-800 hover:to-sage-700 text-white font-black text-sm flex items-center justify-center gap-2 shadow-md transition active:scale-[0.99]">
+                    <span>يلا نبدأ التمرين يا منة ✨</span>
+                    <i class="fa-solid fa-arrow-left text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastBox" class="fixed top-16 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2 pointer-events-none w-full max-w-xs px-4"></div>
+
+    <script>
+        // =========================================================================
+        // 1. CUSTOM ANIMATED FEMALE EXERCISE SVG ILLUSTRATIONS (MOCHA & SAGE THEME)
+        // =========================================================================
+        // Every illustration shows a sporty female silhouette (with ponytail & leggings)
+        // performing the exact machine or wooden stick movement.
+        function getFemaleExerciseSvg(type) {
+            const mochaDark = "#6D564B";
+            const mochaMid = "#8C7365";
+            const mochaLight = "#D7C8BE";
+            const sageMain = "#5E8585";
+            const sageLight = "#A7C1C1";
+            const skinTone = "#E8C5B0";
+            const machineFrame = "#CBD5E1";
+            const stickWood = "#B47B4E";
+
+            const femaleHeadRight = (cx, cy) => `
+                <!-- Ponytail -->
+                <path d="M${cx-7} ${cy-2} Q${cx-17} ${cy-6} ${cx-16} ${cy+6}" stroke="${mochaDark}" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                <circle cx="${cx}" cy="${cy}" r="7.5" fill="${skinTone}"/>
+                <path d="M${cx-6} ${cy-4} Q${cx} ${cy-10} ${cx+6} ${cy-3}" fill="${mochaDark}"/>
+            `;
+
+            const femaleHeadFront = (cx, cy) => `
+                <!-- High Bun / Ponytail -->
+                <circle cx="${cx}" cy="${cy-10}" r="4.5" fill="${mochaDark}"/>
+                <circle cx="${cx}" cy="${cy}" r="7.5" fill="${skinTone}"/>
+                <path d="M${cx-7} ${cy-2} Q${cx} ${cy-9} ${cx+7} ${cy-2}" fill="${mochaDark}"/>
+            `;
+
+            const svgs = {
+                // ---------------- WARM-UP SVGS ----------------
+                warmup_stick_overhead: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Soft Aura -->
+                        <circle cx="60" cy="52" r="38" fill="#E4ECEC" opacity="0.6"/>
+                        ${femaleHeadFront(60, 32)}
+                        <!-- Sport Top & Leggings -->
+                        <path d="M51 42 L69 42 L66 64 L54 64 Z" fill="${sageMain}"/>
+                        <line x1="56" y1="64" x2="54" y2="90" stroke="${mochaDark}" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="64" y1="64" x2="66" y2="90" stroke="${mochaDark}" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Animated Arms & Wooden Stick Raising Overhead -->
+                        <g class="anim-stick-up">
+                            <line x1="52" y1="45" x2="38" y2="34" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <line x1="68" y1="45" x2="82" y2="34" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <!-- Wooden Stick -->
+                            <line x1="24" y1="34" x2="96" y2="34" stroke="${stickWood}" stroke-width="4.5" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                `,
+                warmup_stick_twist: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <circle cx="60" cy="52" r="38" fill="#F0EAE6" opacity="0.7"/>
+                        ${femaleHeadFront(60, 28)}
+                        <g class="anim-twist">
+                            <!-- Wooden Stick on Shoulders -->
+                            <line x1="22" y1="41" x2="98" y2="41" stroke="${stickWood}" stroke-width="4.5" stroke-linecap="round"/>
+                            <!-- Torso -->
+                            <path d="M50 40 L70 40 L65 63 L55 63 Z" fill="${mochaMid}"/>
+                            <!-- Arms holding stick ends -->
+                            <path d="M50 42 L34 48 L28 41" stroke="${skinTone}" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <path d="M70 42 L86 48 L92 41" stroke="${skinTone}" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        </g>
+                        <!-- Legs -->
+                        <line x1="56" y1="63" x2="53" y2="90" stroke="${sageMain}" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="64" y1="63" x2="67" y2="90" stroke="${sageMain}" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Rotation Arrow -->
+                        <path d="M42 74 Q60 80 78 74" stroke="${mochaDark}" stroke-width="1.8" fill="none" stroke-dasharray="2 2"/>
+                    </svg>
+                `,
+                warmup_arm_circles: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <circle cx="60" cy="52" r="38" fill="#E4ECEC" opacity="0.6"/>
+                        ${femaleHeadFront(60, 28)}
+                        <path d="M51 39 L69 39 L65 63 L55 63 Z" fill="${sageMain}"/>
+                        <line x1="56" y1="63" x2="54" y2="90" stroke="${mochaDark}" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="64" y1="63" x2="66" y2="90" stroke="${mochaDark}" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Circular Motion Dashed Rings -->
+                        <circle cx="30" cy="45" r="11" stroke="${mochaMid}" stroke-width="1.5" fill="none" stroke-dasharray="3 2"/>
+                        <circle cx="90" cy="45" r="11" stroke="${mochaMid}" stroke-width="1.5" fill="none" stroke-dasharray="3 2"/>
+                        <!-- Arms Outstretched -->
+                        <g class="anim-press-y">
+                            <line x1="51" y1="42" x2="26" y2="42" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <line x1="69" y1="42" x2="94" y2="42" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                `,
+                warmup_treadmill: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Treadmill Base & Console -->
+                        <line x1="25" y1="88" x2="95" y2="88" stroke="${mochaDark}" stroke-width="5" stroke-linecap="round"/>
+                        <line x1="82" y1="88" x2="90" y2="38" stroke="${machineFrame}" stroke-width="4" stroke-linecap="round"/>
+                        <rect x="83" y="32" width="12" height="7" rx="2" fill="${mochaMid}"/>
+                        <!-- Female Walking -->
+                        ${femaleHeadRight(58, 25)}
+                        <path d="M52 35 L64 35 L63 58 L53 58 Z" fill="${sageMain}"/>
+                        <line x1="60" y1="39" x2="76" y2="47" stroke="${skinTone}" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Animated Walking Legs -->
+                        <line x1="58" y1="58" x2="66" y2="83" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round" class="anim-walk-1"/>
+                        <line x1="56" y1="58" x2="48" y2="83" stroke="${mochaMid}" stroke-width="5.5" stroke-linecap="round" class="anim-walk-2"/>
+                    </svg>
+                `,
+
+                // ---------------- PUSH MACHINES SVGS ----------------
+                push_chest_press: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Machine Seat & Frame -->
+                        <line x1="34" y1="22" x2="34" y2="86" stroke="${machineFrame}" stroke-width="5" stroke-linecap="round"/>
+                        <line x1="34" y1="68" x2="56" y2="68" stroke="${machineFrame}" stroke-width="5" stroke-linecap="round"/>
+                        <!-- Seated Female -->
+                        ${femaleHeadRight(46, 30)}
+                        <path d="M40 40 L52 40 L52 65 L40 65 Z" fill="${sageMain}"/>
+                        <path d="M48 65 L68 65 L72 86" stroke="${mochaDark}" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Animated Pushing Arm & Machine Lever -->
+                        <g class="anim-push-x">
+                            <line x1="48" y1="45" x2="74" y2="45" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <line x1="74" y1="20" x2="74" y2="56" stroke="${mochaMid}" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="74" cy="45" r="3.5" fill="${mochaDark}"/>
+                        </g>
+                    </svg>
+                `,
+                push_pec_fly: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Butterfly Machine Frame -->
+                        <rect x="44" y="16" width="32" height="72" rx="6" fill="#E4ECEC"/>
+                        ${femaleHeadFront(60, 32)}
+                        <path d="M50 42 L70 42 L66 66 L54 66 Z" fill="${mochaMid}"/>
+                        <line x1="55" y1="66" x2="53" y2="88" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round"/>
+                        <line x1="65" y1="66" x2="67" y2="88" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round"/>
+                        <!-- Animated Butterfly Arms Closing Inward -->
+                        <g class="anim-fly">
+                            <path d="M50 46 L30 46 L30 30" stroke="${sageMain}" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+                            <path d="M70 46 L90 46 L90 30" stroke="${sageMain}" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+                            <line x1="50" y1="46" x2="32" y2="46" stroke="${skinTone}" stroke-width="4" stroke-linecap="round"/>
+                            <line x1="70" y1="46" x2="88" y2="46" stroke="${skinTone}" stroke-width="4" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                `,
+                push_shoulder_press: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Seat Back -->
+                        <rect x="46" y="34" width="28" height="45" rx="5" fill="#E2D6CE"/>
+                        ${femaleHeadFront(60, 35)}
+                        <path d="M51 45 L69 45 L66 68 L54 68 Z" fill="${sageMain}"/>
+                        <line x1="55" y1="68" x2="53" y2="90" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round"/>
+                        <line x1="65" y1="68" x2="67" y2="90" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round"/>
+                        <!-- Overhead Press Handles & Arms -->
+                        <g class="anim-press-y">
+                            <path d="M50 48 L36 42 L38 24" stroke="${skinTone}" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+                            <path d="M70 48 L84 42 L82 24" stroke="${skinTone}" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+                            <line x1="28" y1="24" x2="92" y2="24" stroke="${mochaDark}" stroke-width="4" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                `,
+                push_lateral_machine: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <circle cx="60" cy="52" r="36" fill="#F0EAE6" opacity="0.6"/>
+                        ${femaleHeadFront(60, 30)}
+                        <path d="M51 41 L69 41 L66 66 L54 66 Z" fill="${mochaMid}"/>
+                        <line x1="55" y1="66" x2="53" y2="90" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round"/>
+                        <line x1="65" y1="66" x2="67" y2="90" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round"/>
+                        <!-- Side Lateral Pads Raising -->
+                        <g class="anim-press-y">
+                            <line x1="50" y1="45" x2="26" y2="42" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <line x1="70" y1="45" x2="94" y2="42" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <rect x="22" y="36" width="12" height="6" rx="2" fill="${sageMain}"/>
+                            <rect x="86" y="36" width="12" height="6" rx="2" fill="${sageMain}"/>
+                        </g>
+                    </svg>
+                `,
+                push_tricep_cable: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Cable Tower -->
+                        <line x1="86" y1="12" x2="86" y2="90" stroke="${machineFrame}" stroke-width="5" stroke-linecap="round"/>
+                        <line x1="66" y1="14" x2="86" y2="14" stroke="${machineFrame}" stroke-width="4" stroke-linecap="round"/>
+                        <line x1="68" y1="14" x2="68" y2="56" stroke="${mochaMid}" stroke-width="2"/>
+                        <!-- Standing Female -->
+                        ${femaleHeadRight(44, 26)}
+                        <path d="M38 36 L50 36 L49 62 L39 62 Z" fill="${sageMain}"/>
+                        <line x1="44" y1="62" x2="44" y2="89" stroke="${mochaDark}" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Upper arm fixed, forearm pushing down -->
+                        <line x1="45" y1="40" x2="47" y2="54" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                        <g class="anim-pull-y">
+                            <line x1="47" y1="54" x2="68" y2="62" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <circle cx="68" cy="62" r="4" fill="${mochaDark}"/>
+                        </g>
+                    </svg>
+                `,
+
+                // ---------------- PULL MACHINES SVGS ----------------
+                pull_lat_pulldown: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Overhead Cable & Lat Bar -->
+                        <line x1="60" y1="8" x2="60" y2="26" stroke="${machineFrame}" stroke-width="3"/>
+                        ${femaleHeadFront(60, 38)}
+                        <path d="M50 48 L70 48 L66 72 L54 72 Z" fill="${sageMain}"/>
+                        <line x1="55" y1="72" x2="52" y2="92" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round"/>
+                        <line x1="65" y1="72" x2="68" y2="92" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round"/>
+                        <!-- Animated Wide Bar & Arms Pulling Down -->
+                        <g class="anim-pull-y">
+                            <line x1="24" y1="24" x2="96" y2="24" stroke="${mochaDark}" stroke-width="4.5" stroke-linecap="round"/>
+                            <line x1="32" y1="24" x2="50" y2="50" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <line x1="88" y1="24" x2="70" y2="50" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                `,
+                pull_seated_row: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Row Bench & Front Pulley -->
+                        <line x1="25" y1="74" x2="95" y2="74" stroke="${machineFrame}" stroke-width="5" stroke-linecap="round"/>
+                        <line x1="92" y1="35" x2="92" y2="85" stroke="${machineFrame}" stroke-width="5" stroke-linecap="round"/>
+                        <!-- Seated Female -->
+                        ${femaleHeadRight(42, 30)}
+                        <path d="M36 40 L48 40 L48 68 L36 68 Z" fill="${mochaMid}"/>
+                        <line x1="46" y1="68" x2="82" y2="68" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round"/>
+                        <!-- Cable & Pulling Arm -->
+                        <g class="anim-pull-x">
+                            <line x1="45" y1="48" x2="68" y2="48" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <line x1="68" y1="48" x2="92" y2="48" stroke="${sageMain}" stroke-width="2.5"/>
+                            <rect x="65" y="42" width="5" height="12" rx="2" fill="${mochaDark}"/>
+                        </g>
+                    </svg>
+                `,
+                pull_chest_supported: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Chest Pad -->
+                        <line x1="58" y1="36" x2="58" y2="70" stroke="${mochaLight}" stroke-width="7" stroke-linecap="round"/>
+                        <line x1="36" y1="70" x2="58" y2="70" stroke="${machineFrame}" stroke-width="5" stroke-linecap="round"/>
+                        <!-- Female Leaning Against Chest Pad -->
+                        ${femaleHeadRight(46, 26)}
+                        <path d="M40 36 L52 36 L52 66 L40 66 Z" fill="${sageMain}"/>
+                        <path d="M46 66 L46 88" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round"/>
+                        <!-- Machine Row Lever -->
+                        <g class="anim-pull-x">
+                            <line x1="46" y1="44" x2="74" y2="44" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <line x1="74" y1="22" x2="74" y2="56" stroke="${mochaDark}" stroke-width="4" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                `,
+                pull_rear_delt: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <circle cx="60" cy="52" r="36" fill="#E4ECEC" opacity="0.6"/>
+                        ${femaleHeadFront(60, 30)}
+                        <!-- Back of Sport Top -->
+                        <path d="M50 40 L70 40 L66 66 L54 66 Z" fill="${mochaDark}"/>
+                        <line x1="55" y1="66" x2="53" y2="89" stroke="${sageMain}" stroke-width="5.5" stroke-linecap="round"/>
+                        <line x1="65" y1="66" x2="67" y2="89" stroke="${sageMain}" stroke-width="5.5" stroke-linecap="round"/>
+                        <!-- Rear Delt Sweeping Arms Outward -->
+                        <g class="anim-abduct">
+                            <line x1="50" y1="44" x2="24" y2="44" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <line x1="70" y1="44" x2="96" y2="44" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <circle cx="24" cy="44" r="4" fill="${mochaMid}"/>
+                            <circle cx="96" cy="44" r="4" fill="${mochaMid}"/>
+                        </g>
+                    </svg>
+                `,
+                pull_bicep_machine: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Preacher Angled Pad -->
+                        <line x1="56" y1="42" x2="70" y2="62" stroke="${mochaLight}" stroke-width="7" stroke-linecap="round"/>
+                        <line x1="56" y1="62" x2="56" y2="88" stroke="${machineFrame}" stroke-width="5"/>
+                        ${femaleHeadRight(40, 28)}
+                        <path d="M34 38 L46 38 L46 66 L34 66 Z" fill="${sageMain}"/>
+                        <line x1="42" y1="66" x2="42" y2="88" stroke="${mochaDark}" stroke-width="5.5" stroke-linecap="round"/>
+                        <!-- Upper Arm on Pad + Curling Forearm -->
+                        <line x1="44" y1="42" x2="62" y2="52" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                        <g class="anim-leg-ext">
+                            <line x1="62" y1="52" x2="80" y2="42" stroke="${skinTone}" stroke-width="4.5" stroke-linecap="round"/>
+                            <circle cx="82" cy="41" r="4.5" fill="${mochaDark}"/>
+                        </g>
+                    </svg>
+                `,
+
+                // ---------------- LEGS & GLUTES MACHINES SVGS ----------------
+                legs_leg_press: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Angled Seat -->
+                        <path d="M26 42 L38 72 L58 72" stroke="${machineFrame}" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        ${femaleHeadRight(36, 34)}
+                        <path d="M32 44 L44 68 L54 66 L42 42 Z" fill="${sageMain}"/>
+                        <!-- Animated Legs & Footplate Pushing -->
+                        <g class="anim-leg-press">
+                            <path d="M50 66 L68 52 L86 58" stroke="${mochaDark}" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Footplate -->
+                            <line x1="82" y1="40" x2="92" y2="72" stroke="${mochaMid}" stroke-width="6" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                `,
+                legs_hip_abduction: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Seated Machine Frame -->
+                        <rect x="42" y="22" width="36" height="52" rx="6" fill="#F0EAE6"/>
+                        ${femaleHeadFront(60, 28)}
+                        <path d="M50 38 L70 38 L67 60 L53 60 Z" fill="${sageMain}"/>
+                        <!-- Animated Knees/Thighs Opening Outward -->
+                        <g class="anim-abduct">
+                            <line x1="54" y1="60" x2="34" y2="78" stroke="${mochaDark}" stroke-width="6.5" stroke-linecap="round"/>
+                            <line x1="66" y1="60" x2="86" y2="78" stroke="${mochaDark}" stroke-width="6.5" stroke-linecap="round"/>
+                            <!-- Side Pads -->
+                            <rect x="26" y="70" width="7" height="14" rx="3" fill="${mochaMid}"/>
+                            <rect x="87" y="70" width="7" height="14" rx="3" fill="${mochaMid}"/>
+                        </g>
+                    </svg>
+                `,
+                legs_leg_curl: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Seated Chair -->
+                        <path d="M36 32 L36 66 L68 66" stroke="${machineFrame}" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        ${femaleHeadRight(46, 26)}
+                        <path d="M40 36 L52 36 L52 62 L40 62 Z" fill="${mochaMid}"/>
+                        <!-- Thigh on seat -->
+                        <line x1="46" y1="62" x2="68" y2="62" stroke="${mochaDark}" stroke-width="6.5" stroke-linecap="round"/>
+                        <!-- Lower Leg Curling Down & Back -->
+                        <g class="anim-leg-curl">
+                            <line x1="68" y1="62" x2="86" y2="82" stroke="${skinTone}" stroke-width="5.5" stroke-linecap="round"/>
+                            <circle cx="84" cy="80" r="5" fill="${sageMain}"/>
+                        </g>
+                    </svg>
+                `,
+                legs_leg_extension: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Seated Chair -->
+                        <path d="M36 32 L36 66 L68 66" stroke="${machineFrame}" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        ${femaleHeadRight(46, 26)}
+                        <path d="M40 36 L52 36 L52 62 L40 62 Z" fill="${sageMain}"/>
+                        <line x1="46" y1="62" x2="68" y2="62" stroke="${mochaDark}" stroke-width="6.5" stroke-linecap="round"/>
+                        <!-- Lower Leg Extending Upward -->
+                        <g class="anim-leg-ext">
+                            <line x1="68" y1="62" x2="72" y2="88" stroke="${skinTone}" stroke-width="5.5" stroke-linecap="round"/>
+                            <circle cx="75" cy="84" r="5" fill="${mochaMid}"/>
+                        </g>
+                    </svg>
+                `,
+                legs_glute_kickback: `
+                    <svg viewBox="0 0 120 100" class="w-full h-full">
+                        <!-- Front Support Frame -->
+                        <line x1="84" y1="22" x2="84" y2="88" stroke="${machineFrame}" stroke-width="5" stroke-linecap="round"/>
+                        ${femaleHeadRight(66, 26)}
+                        <!-- Slightly Leaning Torso -->
+                        <path d="M58 34 L70 36 L62 60 L52 58 Z" fill="${sageMain}"/>
+                        <line x1="66" y1="40" x2="84" y2="44" stroke="${skinTone}" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Standing Leg -->
+                        <line x1="58" y1="58" x2="58" y2="88" stroke="${mochaMid}" stroke-width="5.5" stroke-linecap="round"/>
+                        <!-- Kickback Working Leg -->
+                        <g class="anim-kickback">
+                            <line x1="56" y1="58" x2="34" y2="82" stroke="${mochaDark}" stroke-width="6" stroke-linecap="round"/>
+                            <rect x="27" y="77" width="9" height="8" rx="2" fill="${mochaMid}"/>
+                        </g>
+                    </svg>
+                `
+            };
+
+            return svgs[type] || svgs.push_chest_press;
+        }
+
+        // =========================================================================
+        // 2. COMPLETE MACHINE-ONLY + STICK WARM-UP WORKOUT DATA (FOR FEMALE BEGINNER)
+        // =========================================================================
+        const WORKOUT_DATA = [
+            // ==================== TAB 1: WARM-UP (التسخين) ====================
+            {
+                id: 'warmup_1',
+                tab: 'warmup',
+                nameAr: 'تليين الأكتاف بالعصاية الخشب',
+                nameEn: 'Shoulder Mobility with Wooden Stick',
+                muscle: 'مرونة الكتف والصدر',
+                machineType: 'عصاية خفيفة (Stick)',
+                setsReps: 'جولتان × 12 عدة هادئة',
+                restTime: '30 ثانية',
+                svgType: 'warmup_stick_overhead',
+                steps: [
+                    'امسكي العصاية الخشب بكلتا يديكِ بمسافة واسعة ومريحة أمام الفخذين.',
+                    'ارفعي العصاية ببطء فوق رأسكِ مع إبقاء ذراعيكِ مفرودتين قدر الإمكان.',
+                    'انزلي بالعصاية للعودة لوضع البداية بهدوء وتنفسي بشكل طبيعي لتسخين مفصل الكتف.'
+                ],
+                tip: 'لا تضغطي على مفصل الكتف بقوة؛ الهدف هو الإحماء اللطيف وزيادة مرونة الحركة قبل الأجهزة.',
+                videoQuery: 'shoulder dislocations mobility stick warmup female'
+            },
+            {
+                id: 'warmup_2',
+                tab: 'warmup',
+                nameAr: 'لف الجذع والوسط بالعصاية الخشب',
+                nameEn: 'Stick Torso Twists',
+                muscle: 'تسخين الجذع وأسفل الظهر',
+                machineType: 'عصاية خفيفة (Stick)',
+                setsReps: 'جولتان × 15 لفة للجانبين',
+                restTime: '30 ثانية',
+                svgType: 'warmup_stick_twist',
+                steps: [
+                    'ضعي العصاية الخشب خلف رقبتكِ فوق الكتفين بشكل مريح وامسكي طرفيها.',
+                    'ثبتي قدميكِ بعرض الكتفين مع ثنية بسيطة جداً في الركبتين.',
+                    'لفي الجزء العلوي من جسمكِ يميناً ويساراً بهدوء وتحكم دون تحريك الحوض بعنف.'
+                ],
+                tip: 'اجعلي الحركة انسيابية وهادئة مع شد عضلات البطن قليلاً لحماية أسفل الظهر.',
+                videoQuery: 'standing broomstick torso twists warmup female'
+            },
+            {
+                id: 'warmup_3',
+                tab: 'warmup',
+                nameAr: 'دوران الذراعين وتنشيط لوح الكتف',
+                nameEn: 'Arm Circles & Scapular Warm-up',
+                muscle: 'مفاصل الأكتاف وأعلى الظهر',
+                machineType: 'وزن الجسم',
+                setsReps: 'جولتان × 30 ثانية',
+                restTime: '30 ثانية',
+                svgType: 'warmup_arm_circles',
+                steps: [
+                    'قفي باستقامة وافردي ذراعيكِ للجانبين بموازاة الأرض.',
+                    'ارسمي دوائر صغيرة بذراعيكِ للأمام لمدة 15 ثانية ثم للخلف لمدة 15 ثانية.',
+                    'افتحي صدركِ للخلف وضمي لوحي الكتف برفق لتنشيط الدورة الدموية.'
+                ],
+                tip: 'هذا التمرين يحمي كتفيكِ ويمنع أي شد عضلي أثناء تمارين الدفع والسحب.',
+                videoQuery: 'arm circles shoulder warmup routine women'
+            },
+            {
+                id: 'warmup_4',
+                tab: 'warmup',
+                nameAr: 'مشي خفيف على المشاية أو الإليبتيكال',
+                nameEn: 'Incline Treadmill or Elliptical Walk',
+                muscle: 'تنشيط الدورة الدموية للجسم',
+                machineType: 'جهاز المشي / الإليبتيكال',
+                setsReps: '5 دقائق سرعة متوسطة',
+                restTime: 'دقيقة واحدة قبل الحديد',
+                svgType: 'warmup_treadmill',
+                steps: [
+                    'ابدئي بالمشي الهادئ لمدة دقيقتين لرفع حرارة الجسم تدريجياً.',
+                    'زيدي السرعة قليلاً في آخر 3 دقائق حتى تشعري بنشاط ودفء في الجسم.',
+                    'اشربي رشفة ماء صغيرة واستعدي للبدء بتمارين الأجهزة.'
+                ],
+                tip: 'تجنبي الجري المجهد قبل التمرين؛ 5 دقائق مشي نشيط كافية تماماً لتسخين العضلات.',
+                videoQuery: 'treadmill warmup before workout women gym'
+            },
+
+            // ==================== TAB 2: PUSH (يوم الدفع - أجهزة فقط) ====================
+            {
+                id: 'push_1',
+                tab: 'push',
+                nameAr: 'جهاز دفع الصدر جالس',
+                nameEn: 'Seated Chest Press Machine',
+                muscle: 'شد وتقوية عضلات الصدر',
+                machineType: 'جهاز دفع الصدر (Machine)',
+                setsReps: '3 جولات × 12 عدة',
+                restTime: '60 ثانية',
+                svgType: 'push_chest_press',
+                steps: [
+                    'اضبطي ارتفاع الكرسي بحيث تكون المقابض في مستوى منتصف الصدر تماماً.',
+                    'أسندي ظهركِ بالكامل على الكرسي وادفعي المقابض للأمام بهدوء مع إخراج النفس.',
+                    'ارجعي بالوزن ببطء وتحكم دون ترك الأوزان ترتطم ببعضها.'
+                ],
+                tip: 'أبقي كوعيكِ منخفضين قليلاً عن مستوى الكتف (زاوية مريحة) ولا تقفلي الكوع للآخر عند الدفع.',
+                videoQuery: 'seated chest press machine form women beginner'
+            },
+            {
+                id: 'push_2',
+                tab: 'push',
+                nameAr: 'جهاز تجميع الصدر (الفراشة)',
+                nameEn: 'Pec Deck Butterfly Machine',
+                muscle: 'تنسيق وشد الصدر',
+                machineType: 'جهاز الفراشة (Machine)',
+                setsReps: '3 جولات × 12-15 عدة',
+                restTime: '60 ثانية',
+                svgType: 'push_pec_fly',
+                steps: [
+                    'اجلسي على الجهاز وافتحي ذراعيكِ لتمسكي بالمقابض مع إبقاء ظهركِ مفروداً.',
+                    'ضمي الذراعين للأمام حتى تقترب القبضتان أمام صدركِ واثبتي لثانية.',
+                    'افتحي ذراعيكِ للخلف ببطء حتى تشعري بتمدد لطيف في عضلة الصدر.'
+                ],
+                tip: 'حافظي على ثبات أكتافكِ للخلف ولاترفعي كتفيكِ باتجاه الأذنين أثناء التجميع.',
+                videoQuery: 'pec deck chest fly machine form female'
+            },
+            {
+                id: 'push_3',
+                tab: 'push',
+                nameAr: 'جهاز دفع الكتف جالس',
+                nameEn: 'Seated Shoulder Press Machine',
+                muscle: 'تناسق الأكتاف',
+                machineType: 'جهاز الكتف (Machine)',
+                setsReps: '3 جولات × 12 عدة',
+                restTime: '60 ثانية',
+                svgType: 'push_shoulder_press',
+                steps: [
+                    'اجلسي واضبطي المقعد بحيث تكون المقابض بمحاذاة الكتفين عند البداية.',
+                    'ادفعي المقابض للأعلى فوق الرأس بسلاسة مع إخراج النفس.',
+                    'انزلي بالوزن ببطء لمستوى الأذن أو الكتف وكرري.'
+                ],
+                tip: 'اختاري وزناً خفيفاً في البداية يتيح لكِ إكمال الـ 12 عدة دون تقوس أسفل الظهر.',
+                videoQuery: 'seated shoulder press machine tutorial women'
+            },
+            {
+                id: 'push_4',
+                tab: 'push',
+                nameAr: 'جهاز رفرفة كتف جانبي',
+                nameEn: 'Lateral Raise Machine',
+                muscle: 'الكتف الجانبي ورسم الذراع',
+                machineType: 'جهاز الرفرفة الجانبي',
+                setsReps: '3 جولات × 12-15 عدة',
+                restTime: '60 ثانية',
+                svgType: 'push_lateral_machine',
+                steps: [
+                    'اجلسي على الجهاز وضعي كوعيكِ خلف الوسائد المبطنة المخصصة للذراعين.',
+                    'ارفعي ذراعيكِ للجانبين بقيادة الكوع حتى تصبح بمستوى الكتف.',
+                    'انزلي ببطء وتحكم لتشعري بعمل عضلة الكتف الجانبية.'
+                ],
+                tip: 'لا ترفعي ذراعيكِ أعلى من مستوى الكتف حتى يظل التركيز على رسمة الكتف فقط.',
+                videoQuery: 'lateral raise machine form female gym'
+            },
+            {
+                id: 'push_5',
+                tab: 'push',
+                nameAr: 'سحب كابل ترايسبس بالمسطرة أو الحبل',
+                nameEn: 'Cable Triceps Pushdown',
+                muscle: 'شد الذراع الخلفي (الترايسبس)',
+                machineType: 'جهاز الكابل (Cable)',
+                setsReps: '3 جولات × 12-15 عدة',
+                restTime: '60 ثانية',
+                svgType: 'push_tricep_cable',
+                steps: [
+                    'قفي أمام جهاز الكابل العالي وامسكي المسطرة أو الحبل مع تثبيت الكوعين بجانب جسمكِ.',
+                    'ادفعي الوزن لأسفل حتى تنفرد ذراعاكِ بالكامل لشد الجزء الخلفي من الذراع.',
+                    'ارجعي بالساعدين فقط للأعلى ببطء مع بقاء الكوع ثابتاً في مكانه.'
+                ],
+                tip: 'هذا التمرين ممتاز جداً لشد ترهلات الذراع الخلفية؛ السر كله في ثبات الكوع بجانب الخصر.',
+                videoQuery: 'cable tricep pushdown form women beginner'
+            },
+
+            // ==================== TAB 3: PULL (يوم السحب - أجهزة فقط) ====================
+            {
+                id: 'pull_1',
+                tab: 'pull',
+                nameAr: 'جهاز السحب العالي للظهر (المجنح)',
+                nameEn: 'Lat Pulldown Machine',
+                muscle: 'شد الظهر ونحت الخصر',
+                machineType: 'جهاز السحب العالي',
+                setsReps: '3 جولات × 12 عدة',
+                restTime: '60-90 ثانية',
+                svgType: 'pull_lat_pulldown',
+                steps: [
+                    'امسكي البار بقبضة أوسع قليلاً من الكتفين واجلسي مع تثبيت الفخذين تحت الوسادة.',
+                    'ارفعي صدركِ للأعلى واسحبي البار لأسفل باتجاه أعلى الصدر.',
+                    'ارجعي بالبار للأعلى ببطء وتحكم حتى تتمدد عضلات الظهر.'
+                ],
+                tip: 'فكري في السحب بكوعيكِ لأسفل وليس بقبضة اليد فقط، ولا تسحبي البار خلف الرقبة أبداً.',
+                videoQuery: 'lat pulldown machine form women beginner'
+            },
+            {
+                id: 'pull_2',
+                tab: 'pull',
+                nameAr: 'جهاز السحب الأرضي جالس للظهر',
+                nameEn: 'Seated Cable Row Machine',
+                muscle: 'منتصف الظهر واستقامة القوام',
+                machineType: 'جهاز السحب الأرضي',
+                setsReps: '3 جولات × 12 عدة',
+                restTime: '60 ثانية',
+                svgType: 'pull_seated_row',
+                steps: [
+                    'اجلسي وضعي قدميكِ على المنصة مع ثنية خفيفة في الركبتين وفرد الظهر تماماً.',
+                    'اسحبي المقبض باتجاه البطن مع ضم لوحي الكتف للخلف.',
+                    'اثبتي لثانية واحدة ثم افردي ذراعيكِ للأمام ببطء دون حني الظهر.'
+                ],
+                tip: 'حافظي على ثبات جذعكِ ولا تتأرجحي للأمام والخلف أثناء السحب.',
+                videoQuery: 'seated cable row form female tutorial'
+            },
+            {
+                id: 'pull_3',
+                tab: 'pull',
+                nameAr: 'جهاز سحب ظهر مسند للصدر',
+                nameEn: 'Chest-Supported Machine Row',
+                muscle: 'أعلى ووسط الظهر بأمان تام',
+                machineType: 'جهاز سحب الظهر المسند',
+                setsReps: '3 جولات × 12 عدة',
+                restTime: '60 ثانية',
+                svgType: 'pull_chest_supported',
+                steps: [
+                    'اضبطي الكرسي وأسندي صدركِ بشكل مريح على الوسادة الأمامية للجهاز.',
+                    'امسكي المقابض واسحبيها للخلف مع التركيز على عصر عضلات الظهر.',
+                    'ارجعي للأمام بهدوء وتحكم.'
+                ],
+                tip: 'وجود مسند الصدر يجعل هذا الجهاز مريحاً جداً لأسفل الظهر ومثالياً للمبتدئات.',
+                videoQuery: 'chest supported machine row form women'
+            },
+            {
+                id: 'pull_4',
+                tab: 'pull',
+                nameAr: 'جهاز فراشة خلفي للكتف الخلفي',
+                nameEn: 'Rear Delt Fly Machine',
+                muscle: 'الكتف الخلفي وشد أعلى الظهر',
+                machineType: 'جهاز الفراشة المعكوس',
+                setsReps: '3 جولات × 12-15 عدة',
+                restTime: '60 ثانية',
+                svgType: 'pull_rear_delt',
+                steps: [
+                    'اجلسي في مواجهة الجهاز بحيث يكون صدركِ مسنوداً على وسادة الكرسي.',
+                    'امسكي المقابض الأمامية وافتحي ذراعيكِ للخلف في قوس واسع.',
+                    'عودي لوضع البداية ببطء دون ترك الأوزان تصطدم.'
+                ],
+                tip: 'تمرين رائع لتحسين استقامة الظهر والكتفين خصوصاً مع الجلوس الطويل أو استخدام الهاتف.',
+                videoQuery: 'rear delt fly machine form women'
+            },
+            {
+                id: 'pull_5',
+                tab: 'pull',
+                nameAr: 'جهاز بايسبس جالس',
+                nameEn: 'Preacher Bicep Curl Machine',
+                muscle: 'شد الذراع الأمامي (البايسبس)',
+                machineType: 'جهاز البايسبس',
+                setsReps: '3 جولات × 12 عدة',
+                restTime: '60 ثانية',
+                svgType: 'pull_bicep_machine',
+                steps: [
+                    'اجلسي وضعي ذراعيكِ بالكامل على الوسادة المائلة للجهاز.',
+                    'امسكي المقابض واثني كوعيكِ لرفع الوزن للأعلى بسلاسة.',
+                    'انزلي بالوزن ببطء حتى تقترب ذراعكِ من الانفراد الكامل.'
+                ],
+                tip: 'أبقي أعلى ذراعكِ ملتصقاً بالوسادة طوال الحركة لتركيز التمرين على الذراع فقط.',
+                videoQuery: 'bicep curl machine form female beginner'
+            },
+
+            // ==================== TAB 4: LEGS (يوم الرجل والأرداف - أجهزة فقط) ====================
+            {
+                id: 'legs_1',
+                tab: 'legs',
+                nameAr: 'جهاز دفع الرجل (ليج بريس)',
+                nameEn: 'Seated Leg Press Machine',
+                muscle: 'الفخذين والأرداف بالكامل',
+                machineType: 'جهاز دفع الرجل (Machine)',
+                setsReps: '3 جولات × 12 عدة',
+                restTime: '90 ثانية',
+                svgType: 'legs_leg_press',
+                steps: [
+                    'اجلسي على الجهاز وضعي قدميكِ في منتصف المنصة بعرض الكتفين.',
+                    'ادفعي المنصة بكعب قدميكِ لفرد الساقين دون قفل مفصل الركبة للآخر.',
+                    'اثني ركبتيكِ للعودة ببطء حتى تشكل الركبة زاوية 90 درجة ثم ادفعي مجدداً.'
+                ],
+                tip: 'لا تقفلي ركبتيكِ بالكامل عند الفرد لحماية المفاصل، وادفعي بكعب القدم لتشغيل الأرداف أكثر.',
+                videoQuery: 'seated leg press machine form women glutes'
+            },
+            {
+                id: 'legs_2',
+                tab: 'legs',
+                nameAr: 'جهاز فتح الحوض والأرداف الجانبية',
+                nameEn: 'Hip Abduction Machine',
+                muscle: 'نحت وتقوية الأرداف الجانبية',
+                machineType: 'جهاز Abduction',
+                setsReps: '3 جولات × 15 عدة',
+                restTime: '60 ثانية',
+                svgType: 'legs_hip_abduction',
+                steps: [
+                    'اجلسي على الجهاز بحيث تكون الوسائد على الجانب الخارجي لركبتيكِ.',
+                    'ادفعي ركبتيكِ للخارج بقوة عضلات الأرداف واثبتي لثانية واحدة في أقصى فتح.',
+                    'ارجعي للداخل ببطء وتحكم دون ترك الأوزان تدفع ركبتيكِ بسرعة.'
+                ],
+                tip: 'أسندي ظهركِ أو ميلي للأمام قليلاً مع إبقاء الظهر مفروداً لزيادة التركيز على عضلة الأرداف.',
+                videoQuery: 'hip abduction machine form women glutes'
+            },
+            {
+                id: 'legs_3',
+                tab: 'legs',
+                nameAr: 'جهاز مرجحة رجل خلفي جالس',
+                nameEn: 'Seated Leg Curl Machine',
+                muscle: 'شد الفخذ الخلفي',
+                machineType: 'جهاز الخلفية جالس',
+                setsReps: '3 جولات × 12-15 عدة',
+                restTime: '60 ثانية',
+                svgType: 'legs_leg_curl',
+                steps: [
+                    'اجلسي على الجهاز واضبطي الأسطوانة السفلية خلف الكاحل مباشرة.',
+                    'اثني ساقيكِ لأسفل وللخلف لأقصى مدى مريح.',
+                    'اثبتي لثانية ثم ارفعي ساقيكِ ببطء لوضع البداية.'
+                ],
+                tip: 'النزول البطيء والمتحكم به هو السر في شد وتناسق العضلة الخلفية للفخذ.',
+                videoQuery: 'seated leg curl machine form women'
+            },
+            {
+                id: 'legs_4',
+                tab: 'legs',
+                nameAr: 'جهاز مرجحة رجل أمامي',
+                nameEn: 'Leg Extension Machine',
+                muscle: 'شد وتقوية الفخذ الأمامي',
+                machineType: 'جهاز الأمامية (Machine)',
+                setsReps: '3 جولات × 12-15 عدة',
+                restTime: '60 ثانية',
+                svgType: 'legs_leg_extension',
+                steps: [
+                    'اجلسي واضبطي الوسادة السفلية لتكون فوق الكاحل من الأمام.',
+                    'امسكي المقابض الجانبية وافردي ساقيكِ للأعلى حتى تستقيما.',
+                    'اثبتي ثانية في الأعلى ثم انزلي ببطء وتحكم.'
+                ],
+                tip: 'تمرين ممتاز لتقوية العضلات المحيطة بالركبة وشد الفخذ الأمامي.',
+                videoQuery: 'leg extension machine form female beginner'
+            },
+            {
+                id: 'legs_5',
+                tab: 'legs',
+                nameAr: 'جهاز دفع الخلفيات والأرداف (كيك باك)',
+                nameEn: 'Glute Kickback Machine',
+                muscle: 'رفع وشد عضلة الأرداف',
+                machineType: 'جهاز الكيك باك (Machine)',
+                setsReps: '3 جولات × 12 عدة لكل رجل',
+                restTime: '60 ثانية',
+                svgType: 'legs_glute_kickback',
+                steps: [
+                    'قفي على الجهاز وأسندي يديكِ وجذعكِ، وضعي إحدى قدميكِ على منصة الدفع الخلفية.',
+                    'ادفعي المنصة للخلف بكعب قدمكِ مع التركيز على عصر عضلة الأرداف في نهاية الحركة.',
+                    'ارجعي ببطء وكرري نفس العدد للرجل الأخرى.'
+                ],
+                tip: 'لا تقوسي أسفل ظهركِ أثناء الدفع للخلف؛ اجعلي الحركة نابعة من مفصل الحوض والأرداف.',
+                videoQuery: 'glute kickback machine form women tutorial'
+            }
+        ];
+
+        // =========================================================================
+        // 3. STATE & LOCALSTORAGE PERSISTENCE
+        // =========================================================================
+        const STORAGE_KEYS = {
+            LOGS: 'calm_ppl_female_weight_logs_v1',
+            DONE: 'calm_ppl_female_done_today_v1',
+            VIDEOS: 'calm_ppl_female_custom_videos_v1'
+        };
+
+        let currentTab = 'warmup';
+        let selectedExerciseId = null;
+        let weightLogs = {};
+        let completedToday = {};
+        let customVideos = {};
+
+        const TAB_INFO = {
+            warmup: {
+                title: 'تمارين التسخين والمرونة بالعصاية',
+                sub: 'ابدئي بها دائماً (5-10 دقائق) لتهيئة الأكتاف والمفاصل قبل الأجهزة'
+            },
+            push: {
+                title: 'يوم الدفع - Push (أجهزة فقط)',
+                sub: 'تمارين آمنة على الأجهزة لشد الصدر، الأكتاف، والذراع الخلفي (الترايسبس)'
+            },
+            pull: {
+                title: 'يوم السحب - Pull (أجهزة فقط)',
+                sub: 'تمارين أجهزة لشد الظهر، استقامة القوام، وتنسيق الذراع الأمامي'
+            },
+            legs: {
+                title: 'يوم الرجل والأرداف - Legs (أجهزة فقط)',
+                sub: 'تمارين أجهزة متكاملة لشد وتنسيق الفخذين ورفع الأرداف بأمان'
+            }
+        };
+
+        function loadSavedData() {
+            try {
+                const savedLogs = localStorage.getItem(STORAGE_KEYS.LOGS);
+                if (savedLogs) weightLogs = JSON.parse(savedLogs);
+
+                const savedDone = localStorage.getItem(STORAGE_KEYS.DONE);
+                if (savedDone) completedToday = JSON.parse(savedDone);
+
+                const savedVideos = localStorage.getItem(STORAGE_KEYS.VIDEOS);
+                if (savedVideos) customVideos = JSON.parse(savedVideos);
+            } catch (e) {
+                console.warn('Storage read error:', e);
+            }
+        }
+
+        function saveToStorage() {
+            try {
+                localStorage.setItem(STORAGE_KEYS.LOGS, JSON.stringify(weightLogs));
+                localStorage.setItem(STORAGE_KEYS.DONE, JSON.stringify(completedToday));
+                localStorage.setItem(STORAGE_KEYS.VIDEOS, JSON.stringify(customVideos));
+            } catch (e) {
+                console.warn('Storage write error:', e);
+            }
+        }
+
+        // =========================================================================
+        // 4. RENDER RECTANGULAR EXERCISE CARDS (مستطيلات التمارين المبسطة)
+        // =========================================================================
+        window.selectTab = function(tabKey) {
+            currentTab = tabKey;
+
+            ['warmup', 'push', 'pull', 'legs'].forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                if (t === tabKey) {
+                    btn.className = 'py-2.5 px-2 rounded-xl text-center transition-all duration-200 bg-mocha-600 text-white shadow-sm';
+                } else {
+                    btn.className = 'py-2.5 px-2 rounded-xl text-center transition-all duration-200 text-mocha-700 hover:bg-white/60';
+                }
+            });
+
+            renderExerciseList();
+        };
+
+        function renderExerciseList() {
+            const info = TAB_INFO[currentTab];
+            document.getElementById('sectionHeading').textContent = info.title;
+            document.getElementById('sectionSubtext').textContent = info.sub;
+
+            const list = WORKOUT_DATA.filter(ex => ex.tab === currentTab);
+            const doneCount = list.filter(ex => completedToday[ex.id]).length;
+            document.getElementById('sectionProgressText').textContent = `${doneCount} / ${list.length}`;
+
+            const container = document.getElementById('exerciseListContainer');
+
+            container.innerHTML = list.map((ex, index) => {
+                const logs = weightLogs[ex.id] || [];
+                const lastLog = logs.length > 0 ? logs[0] : null;
+                const isDone = !!completedToday[ex.id];
+
+                return `
+                    <div onclick="openDetailModal('${ex.id}')"
+                        class="rect-card cursor-pointer bg-white border ${isDone ? 'border-sage-400 bg-sage-50/30' : 'border-mocha-200/80'} rounded-2xl p-3 sm:p-3.5 flex items-center justify-between gap-3.5 shadow-sm">
+
+                        <!-- Right Side: Animated Female SVG Rectangle Box -->
+                        <div class="w-24 h-20 sm:w-28 sm:h-24 rounded-xl bg-[#F8F5F2] border border-mocha-200/60 flex items-center justify-center shrink-0 overflow-hidden relative">
+                            ${getFemaleExerciseSvg(ex.svgType)}
+                            <span class="absolute top-1.5 right-1.5 w-5 h-5 rounded-md bg-white/90 text-mocha-700 font-en font-bold text-[10px] flex items-center justify-center border border-mocha-200/60">
+                                ${index + 1}
+                            </span>
+                        </div>
+
+                        <!-- Center: Bilingual Exercise Name & Minimal Pills -->
+                        <div class="flex-1 min-w-0 space-y-1">
+                            <div class="flex items-center gap-1.5 flex-wrap">
+                                <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-mocha-100/80 text-mocha-700">
+                                    ${escapeHtml(ex.muscle)}
+                                </span>
+                                ${isDone ? `
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-sage-100 text-sage-800 border border-sage-200">
+                                        <i class="fa-solid fa-check ml-0.5"></i> مكتمل
+                                    </span>
+                                ` : ''}
+                            </div>
+
+                            <!-- Arabic Title -->
+                            <h3 class="text-sm sm:text-base font-extrabold text-mocha-900 truncate">
+                                ${escapeHtml(ex.nameAr)}
+                            </h3>
+
+                            <!-- English Title -->
+                            <p class="text-xs font-en font-semibold text-mocha-500 truncate" dir="ltr">
+                                ${escapeHtml(ex.nameEn)}
+                            </p>
+
+                            <!-- Minimal Sets & Last Recorded Weight Row -->
+                            <div class="flex items-center gap-2 pt-1 flex-wrap">
+                                <span class="text-[11px] font-bold text-mocha-600 bg-mocha-50 px-2 py-0.5 rounded-lg border border-mocha-200/60">
+                                    ${escapeHtml(ex.setsReps)}
+                                </span>
+                                ${lastLog ? `
+                                    <span class="text-[11px] font-extrabold text-sage-800 bg-sage-100/90 px-2 py-0.5 rounded-lg border border-sage-200">
+                                        آخر وزن: <span class="font-en" dir="ltr">${escapeHtml(lastLog.weight)} kg</span>
+                                    </span>
+                                ` : ''}
+                            </div>
+                        </div>
+
+                        <!-- Left Arrow Indicator -->
+                        <div class="w-8 h-8 rounded-xl bg-mocha-50 text-mocha-500 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chevron-left text-xs"></i>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // =========================================================================
+        // 5. EXERCISE DETAIL MODAL LOGIC
+        // =========================================================================
+        function getYouTubeEmbed(url) {
+            if (!url) return null;
+            const reg = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+            const match = url.match(reg);
+            return (match && match[1]) ? `https://www.youtube.com/embed/${match[1]}?rel=0` : null;
+        }
+
+        window.openDetailModal = function(exerciseId) {
+            const ex = WORKOUT_DATA.find(item => item.id === exerciseId);
+            if (!ex) return;
+            selectedExerciseId = exerciseId;
+
+            document.getElementById('modalMusclePill').textContent = ex.muscle;
+            document.getElementById('modalMachineBadge').textContent = ex.machineType;
+            document.getElementById('modalTitleAr').textContent = ex.nameAr;
+            document.getElementById('modalTitleEn').textContent = ex.nameEn;
+            document.getElementById('modalSetsReps').textContent = ex.setsReps;
+            document.getElementById('modalRestTime').textContent = ex.restTime;
+            document.getElementById('modalTipText').textContent = ex.tip;
+
+            // Render Large Animated Illustration
+            document.getElementById('modalLargeIllustration').innerHTML = getFemaleExerciseSvg(ex.svgType);
+
+            // Render Steps
+            document.getElementById('modalStepsList').innerHTML = ex.steps
+                .map(s => `<li>${escapeHtml(s)}</li>`)
+                .join('');
+
+            // Video Links & Custom Video Check
+            const savedCustomUrl = customVideos[exerciseId] || '';
+            document.getElementById('customVideoUrlField').value = savedCustomUrl;
+            document.getElementById('customVideoInputRow').classList.add('hidden');
+
+            const ytQuery = encodeURIComponent(ex.videoQuery || `${ex.nameEn} female form`);
+            document.getElementById('modalYoutubeBtn').href = savedCustomUrl || `https://www.youtube.com/results?search_query=${ytQuery}`;
+            document.getElementById('modalTiktokBtn').href = `https://www.tiktok.com/search?q=${encodeURIComponent(ex.nameEn + ' women gym form')}`;
+
+            const embedBox = document.getElementById('modalEmbeddedVideoBox');
+            const ytEmbedUrl = getYouTubeEmbed(savedCustomUrl);
+            if (ytEmbedUrl) {
+                embedBox.classList.remove('hidden');
+                embedBox.innerHTML = `<iframe src="${ytEmbedUrl}" class="w-full h-full" frameborder="0" allowfullscreen></iframe>`;
+            } else {
+                embedBox.classList.add('hidden');
+                embedBox.innerHTML = '';
+            }
+
+            // Populate Weight Logs
+            renderModalWeightSection(exerciseId);
+            updateModalDoneButton(exerciseId);
+
+            document.getElementById('detailModal').classList.remove('hidden');
+        };
+
+        window.closeDetailModal = function() {
+            document.getElementById('detailModal').classList.add('hidden');
+            document.getElementById('modalEmbeddedVideoBox').innerHTML = '';
+            selectedExerciseId = null;
+        };
+
+        function renderModalWeightSection(exerciseId) {
+            const logs = weightLogs[exerciseId] || [];
+            const lastLog = logs.length > 0 ? logs[0] : null;
+
+            const badge = document.getElementById('modalLastWeightBadge');
+            const weightInput = document.getElementById('modalWeightInput');
+            const repsInput = document.getElementById('modalRepsInput');
+            const historyWrapper = document.getElementById('modalLogsHistoryWrapper');
+            const historyList = document.getElementById('modalLogsHistoryList');
+
+            if (lastLog) {
+                badge.textContent = `آخر وزن: ${lastLog.weight} كجم × ${lastLog.reps} عدة`;
+                weightInput.value = lastLog.weight;
+                repsInput.value = lastLog.reps;
+            } else {
+                badge.textContent = 'لم يسجل وزن بعد';
+                weightInput.value = '';
+                repsInput.value = '12';
+            }
+
+            if (logs.length > 0) {
+                historyWrapper.classList.remove('hidden');
+                historyList.innerHTML = logs.map(item => `
+                    <div class="flex items-center justify-between bg-white border border-mocha-200/70 rounded-xl px-3 py-1.5 text-xs">
+                        <span class="font-en font-bold text-mocha-800" dir="ltr">${escapeHtml(item.weight)} kg × ${escapeHtml(item.reps)} reps</span>
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] text-mocha-500">${escapeHtml(item.date)}</span>
+                            <button type="button" onclick="deleteWeightEntry('${exerciseId}', '${item.id}')" class="text-mocha-400 hover:text-rose-600 transition">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                historyWrapper.classList.add('hidden');
+                historyList.innerHTML = '';
+            }
+        }
+
+        window.handleSaveWeightLog = function(event) {
+            event.preventDefault();
+            if (!selectedExerciseId) return;
+
+            const weightVal = document.getElementById('modalWeightInput').value.trim();
+            const repsVal = document.getElementById('modalRepsInput').value.trim();
+            if (!weightVal || !repsVal) return;
+
+            const dateStr = new Intl.DateTimeFormat('ar-EG', {
+                month: 'short',
+                day: 'numeric'
+            }).format(new Date());
+
+            if (!weightLogs[selectedExerciseId]) {
+                weightLogs[selectedExerciseId] = [];
+            }
+
+            weightLogs[selectedExerciseId].unshift({
+                id: 'w_' + Date.now(),
+                weight: weightVal,
+                reps: repsVal,
+                date: dateStr
+            });
+
+            completedToday[selectedExerciseId] = true;
+            saveToStorage();
+            renderModalWeightSection(selectedExerciseId);
+            updateModalDoneButton(selectedExerciseId);
+            renderExerciseList();
+
+            startRestTimer(60);
+            launchGentleConfetti(14);
+            showToast(`عاش يا منة! تم حفظ ${weightVal} كجم بنجاح 💪✨`);
+        };
+
+        window.deleteWeightEntry = function(exerciseId, entryId) {
+            if (!weightLogs[exerciseId]) return;
+            weightLogs[exerciseId] = weightLogs[exerciseId].filter(i => i.id !== entryId);
+            saveToStorage();
+            renderModalWeightSection(exerciseId);
+            renderExerciseList();
+        };
+
+        function updateModalDoneButton(exerciseId) {
+            const btn = document.getElementById('modalCompleteToggleBtn');
+            const isDone = !!completedToday[exerciseId];
+            if (isDone) {
+                btn.className = 'flex-1 py-2.5 px-4 rounded-xl bg-sage-600 text-white font-extrabold text-xs flex items-center justify-center gap-2 transition';
+                btn.innerHTML = `<i class="fa-solid fa-circle-check"></i><span>مكتمل اليوم ✓</span>`;
+            } else {
+                btn.className = 'flex-1 py-2.5 px-4 rounded-xl border border-mocha-300 text-mocha-800 hover:bg-mocha-50 font-extrabold text-xs flex items-center justify-center gap-2 transition';
+                btn.innerHTML = `<i class="fa-regular fa-circle-check"></i><span>تعليم التمرين كمكتمل اليوم</span>`;
+            }
+        }
+
+        window.toggleCurrentExerciseDone = function() {
+            if (!selectedExerciseId) return;
+            completedToday[selectedExerciseId] = !completedToday[selectedExerciseId];
+            saveToStorage();
+            updateModalDoneButton(selectedExerciseId);
+            renderExerciseList();
+            if (completedToday[selectedExerciseId]) {
+                launchGentleConfetti(10);
+                showToast('عاش يا منة! تم تعليم التمرين كمكتمل 🌸');
+            }
+        };
+
+        window.toggleCustomVideoInput = function() {
+            document.getElementById('customVideoInputRow').classList.toggle('hidden');
+        };
+
+        window.saveExerciseVideoUrl = function() {
+            if (!selectedExerciseId) return;
+            const val = document.getElementById('customVideoUrlField').value.trim();
+            customVideos[selectedExerciseId] = val;
+            saveToStorage();
+            openDetailModal(selectedExerciseId);
+            showToast('تم حفظ رابط الفيديو للتمرين بنجاح');
+        };
+
+        // =========================================================================
+        // 6. REST TIMER & COACH MODAL
+        // =========================================================================
+        let timerInterval = null;
+        let remainingSeconds = 0;
+
+        window.startRestTimer = function(sec) {
+            remainingSeconds = sec;
+            const bar = document.getElementById('restTimerBar');
+            bar.classList.remove('hidden');
+            updateTimerUI();
+
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                remainingSeconds--;
+                if (remainingSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                    bar.classList.add('hidden');
+                    showToast('انتهى وقت الراحة! جاهزة للجولة التالية ✨');
+                } else {
+                    updateTimerUI();
+                }
+            }, 1000);
+        };
+
+        window.addTimerSeconds = function(sec) {
+            remainingSeconds += sec;
+            updateTimerUI();
+        };
+
+        window.stopRestTimer = function() {
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = null;
+            document.getElementById('restTimerBar').classList.add('hidden');
+        };
+
+        function updateTimerUI() {
+            const m = String(Math.floor(remainingSeconds / 60)).padStart(2, '0');
+            const s = String(remainingSeconds % 60).padStart(2, '0');
+            document.getElementById('restTimerCount').textContent = `${m}:${s}`;
+        }
+
+        window.openCoachModal = function() {
+            document.getElementById('coachModal').classList.remove('hidden');
+        };
+
+        window.closeCoachModal = function() {
+            document.getElementById('coachModal').classList.add('hidden');
+        };
+
+        window.resetTodayCompletion = function() {
+            completedToday = {};
+            saveToStorage();
+            renderExerciseList();
+            closeCoachModal();
+            showToast('تم تصفير إنجاز اليوم لبدء تمرين جديد 🌸');
+        };
+
+        window.copyShareMessage = function() {
+            const msg = `أهلاً يا منة 🤎✨ ده اللينك الخاص بجدول تمارينك (التسخين + Push Pull Legs على الأجهزة) مصمم مخصوص عشانك بالشرح والفيديو وخانة تسجيل الأوزان:\n${window.location.href}`;
+            const ta = document.createElement('textarea');
+            ta.value = msg;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            document.body.removeChild(ta);
+            showToast('تم نسخ رسالة منة والرابط! ✨');
+        };
+
+        // =========================================================================
+        // 6.5 MENNA'S PERSONALIZED WELCOME EXPERIENCE & CONFETTI
+        // =========================================================================
+        const MENNA_SECRET_NOTES = [
+            "كل تفصيلة في الموقع ده اتعملت عشان تسهل عليكي التمرين.. فخور بيكي جداً يا منة 🤎✨",
+            "ما تنسيش تشربي مية بين التمارين يا أحلى كابتن في الجيم 💧🌸",
+            "مش مهم الوزن قد إيه، المهم الأداء الصح وإنك تكوني مبسوطة ومرتاحة في تمرينك 🌿🤍",
+            "عاش مقدماً على تمرينة النهاردة يا منة.. خطوة ورا خطوة هتبقي في حتة تانية خالص 💪✨",
+            "لو أي جهاز حسيتيه غريب، افتحي التمرين وشوفي الفيديو والخطوات براحتك.. أنا معاكي في كل خطوة 🤎",
+            "التسخين بالعصاية الخشب في الأول هيخلي كتفك وجسمك فايقين جداً للتمرين.. ابدئي بيه دايماً 🌸",
+            "أشطر واحدة بتلتزم وبتهتم بصحتها.. استمتعي بوقتك في الجيم يا أحلى منة 🤎✨",
+            "كل ما تسجلي وزنك هنا، افتكري إنك بتبني عادة صحية جميلة لنفسك.. عاش يا بطلة 🌿💪"
+        ];
+
+        const MENNA_MOOD_RESPONSES = {
+            excited: "ايوه بقى! الجيم كله هينور النهاردة.. ابدئي بالتسخين وانطلقي يا بطلة 🔥🤎",
+            shy: "ولا يهمك خالص يا منة! كلنا بدأنا كده، الأجهزة كلها سهلة ومشروحة هنا بالتفصيل وأنا معاكي خطوة بخطوة 🤍✨",
+            calm: "مجرد نزولك الجيم النهاردة إنجاز كبير.. العبي بأوزان خفيفة واستمتعي بوقتك يا أحلى منة 🌿🤎"
+        };
+
+        let currentMennaNoteIndex = 0;
+
+        window.openMennaWelcomeModal = function() {
+            // Rotate note every time the modal opens
+            const visitCount = parseInt(localStorage.getItem('menna_visit_counter_v1') || '0', 10);
+            currentMennaNoteIndex = visitCount % MENNA_SECRET_NOTES.length;
+            localStorage.setItem('menna_visit_counter_v1', String(visitCount + 1));
+
+            document.getElementById('mennaSecretNoteText').textContent = MENNA_SECRET_NOTES[currentMennaNoteIndex];
+            selectMennaMood('excited');
+            document.getElementById('mennaWelcomeModal').classList.remove('hidden');
+        };
+
+        window.selectMennaMood = function(moodKey) {
+            ['excited', 'shy', 'calm'].forEach(k => {
+                const btn = document.getElementById(`mood-btn-${k}`);
+                if (!btn) return;
+                if (k === moodKey) {
+                    btn.className = 'mood-pill py-2.5 px-2 rounded-2xl border-2 border-mocha-600 bg-mocha-100/90 text-mocha-900 text-center transition flex flex-col items-center gap-1 shadow-sm scale-[1.02]';
+                } else {
+                    btn.className = 'mood-pill py-2.5 px-2 rounded-2xl border border-mocha-200 bg-white hover:bg-mocha-50 text-mocha-700 text-center transition flex flex-col items-center gap-1 shadow-sm';
+                }
+            });
+
+            const box = document.getElementById('mennaMoodResponseBox');
+            if (box && MENNA_MOOD_RESPONSES[moodKey]) {
+                box.textContent = MENNA_MOOD_RESPONSES[moodKey];
+            }
+        };
+
+        window.nextMennaNote = function() {
+            currentMennaNoteIndex = (currentMennaNoteIndex + 1) % MENNA_SECRET_NOTES.length;
+            const noteEl = document.getElementById('mennaSecretNoteText');
+            noteEl.classList.add('opacity-40');
+            setTimeout(() => {
+                noteEl.textContent = MENNA_SECRET_NOTES[currentMennaNoteIndex];
+                noteEl.classList.remove('opacity-40');
+            }, 120);
+        };
+
+        window.startMennaWorkout = function() {
+            document.getElementById('mennaWelcomeModal').classList.add('hidden');
+            launchGentleConfetti(22);
+            showToast('يلا بينا يا منة! تمرينة موفقة وممتعة 🤎✨');
+        };
+
+        function launchGentleConfetti(count = 18) {
+            const container = document.getElementById('confettiContainer');
+            if (!container) return;
+            const symbols = ['🤎', '✨', '🌸', '🌿', '🤍'];
+
+            for (let i = 0; i < count; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece text-sm sm:text-base';
+                piece.textContent = symbols[i % symbols.length];
+                piece.style.left = `${Math.random() * 94 + 3}%`;
+                piece.style.animationDelay = `${Math.random() * 0.45}s`;
+                piece.style.animationDuration = `${2.1 + Math.random() * 1.1}s`;
+                container.appendChild(piece);
+
+                setTimeout(() => {
+                    piece.remove();
+                }, 3400);
+            }
+        }
+
+        // =========================================================================
+        // 7. UTILITIES
+        // =========================================================================
+        function showToast(text) {
+            const box = document.getElementById('toastBox');
+            const el = document.createElement('div');
+            el.className = 'bg-mocha-800 text-white px-4 py-2.5 rounded-2xl shadow-lg text-xs font-bold flex items-center gap-2 transition-all duration-300';
+            el.innerHTML = `<i class="fa-solid fa-sparkles text-sage-300"></i><span>${escapeHtml(text)}</span>`;
+            box.appendChild(el);
+            setTimeout(() => {
+                el.classList.add('opacity-0', '-translate-y-2');
+                setTimeout(() => el.remove(), 300);
+            }, 3000);
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadSavedData();
+            selectTab('warmup');
+            // Automatically welcome Menna every time she opens the page
+            openMennaWelcomeModal();
+        });
+    </script>
+</body>
+</html>
